@@ -1,0 +1,1 @@
+Aqui estão listados todos os gráficos e relatórios, separados por data
