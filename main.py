@@ -2,6 +2,7 @@ from definitions import *
 from trello_api import TRELLO_API
 
 from datetime import datetime
+from termcolor import colored
 
 def get_cards():
     trello_api = TRELLO_API(TRELLO_BOARD_ID,IGNORE_LIST_IDS,IGNORE_CARDS_IDS, DONE_LIST_ID)
@@ -70,7 +71,7 @@ if __name__ == "__main__":
     crit_activity = get_crit_activity_list(all_cards)
     
     for crit in crit_activity:
-        print(f'{crit} : {crit_activity[crit]}')
+        print(colored(f'{crit} : ',"white"),colored(f'{crit_activity[crit]}',"yellow"))
     print()
 
     for acc in not_done_difficulty_acc:
