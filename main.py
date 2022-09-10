@@ -1,5 +1,6 @@
 from definitions import *
 from trello_api import TRELLO_API
+from output_utils import generate_difficulty_chart,generate_crit_activity_relationship
 
 from datetime import datetime
 from termcolor import colored
@@ -69,6 +70,9 @@ if __name__ == "__main__":
     not_done_difficulty_acc, done_difficulty_acc = get_accumulated_difficulty(card_list_not_done, card_list_done)
     
     crit_activity = get_crit_activity_list(all_cards)
+
+    generate_difficulty_chart(not_done_difficulty_acc, done_difficulty_acc)
+    generate_crit_activity_relationship(crit_activity)
     
     for crit in crit_activity:
         print(colored(f'{crit} : ',"white"),colored(f'{crit_activity[crit]}',"yellow"))
