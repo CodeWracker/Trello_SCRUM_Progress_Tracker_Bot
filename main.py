@@ -75,18 +75,18 @@ if __name__ == "__main__":
     card_list_done = sort_cards(card_list_done)
     all_cards_list = sort_cards(all_cards_list)
     
-    all_cards_acc, done_difficulty_acc = get_accumulated_difficulty(all_cards_list, card_list_done)
+    all_cards_difficulty_acc, done_difficulty_acc = get_accumulated_difficulty(all_cards_list, card_list_done)
     
     crit_activity = get_crit_activity_list(all_cards_list)
 
-    generate_difficulty_chart(all_cards_acc, done_difficulty_acc)
+    generate_difficulty_chart(all_cards_difficulty_acc, done_difficulty_acc)
     generate_crit_activity_relationship(crit_activity)
     
     for crit in crit_activity:
         print(colored(f'{crit} : ',"white"),colored(f'{crit_activity[crit]}',"yellow"))
     print()
 
-    for acc in all_cards_acc:
+    for acc in all_cards_difficulty_acc:
         print(acc)
     print()
     for acc in done_difficulty_acc:
