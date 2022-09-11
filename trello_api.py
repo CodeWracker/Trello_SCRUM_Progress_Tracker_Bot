@@ -12,6 +12,8 @@ class TRELLO_API():
         return json.loads(urlopen(f"https://api.trello.com/1/boards/{self.board_id}/lists").read().decode())
     def get_list_cards(self,list_id):
         return json.loads(urlopen(f"https://api.trello.com/1/lists/{list_id}/cards").read().decode())
+    def get_card_comments(self,card_id):
+        return json.loads(urlopen(f'https://api.trello.com/1/cards/{card_id}/actions?filter=commentCard').read().decode())
 
 if __name__ == "__main__":
     trello_api = TRELLO_API(TRELLO_BOARD_ID,IGNORE_LIST_IDS)
