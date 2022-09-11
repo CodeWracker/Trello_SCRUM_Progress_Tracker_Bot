@@ -87,7 +87,11 @@ if __name__ == "__main__":
     print()
 
     for acc in all_cards_difficulty_acc:
-        print(acc)
+        dt = datetime.fromtimestamp(acc[0])
+        str_dt = dt.strftime("%d/%m/%Y")
+        print(f'{str_dt } : {acc[1]}')
     print()
     for acc in done_difficulty_acc:
-        print(acc)
+        dt = datetime.fromtimestamp(acc[0])
+        str_dt = dt.strftime("%d/%m/%Y")
+        print(f'{str_dt } : {acc[1]}')
